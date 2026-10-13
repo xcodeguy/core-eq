@@ -35,9 +35,13 @@ struct SpectrumBackdrop: View {
             //255, 51, 184
             //53, 255, 46
             //46, 234, 255
-            let myColor = Color(red: 46/255, green: 234/255, blue: 255/255)
-            context.fill(fill, with: .color(myColor.opacity(0.05)))
-            context.stroke(line, with: .color(myColor.opacity(0.13)), lineWidth: 1)
+            //0, 255, 8
+            //225, 255, 0 - yellow
+            //15, 239, 255 - cyan
+            let myColor1 = Color(red: 15/255, green: 239/255, blue: 255/255)
+            let myColor2 = Color(red: 15/255, green: 239/255, blue: 255/255)
+            context.fill(fill, with: .color(myColor1.opacity(0.05)))
+            context.stroke(line, with: .color(myColor2.opacity(0.50)), lineWidth: 1)
         }
         .allowsHitTesting(false)
     }
