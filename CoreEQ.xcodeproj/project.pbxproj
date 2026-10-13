@@ -26,6 +26,7 @@
 				UI/MainWindow/AppMark.swift,
 				UI/MainWindow/AutoEQBrowserView.swift,
 				UI/MainWindow/ColorPalettePicker.swift,
+				UI/MainWindow/ColorTracker.swift,
 				UI/MainWindow/ColumnGap.swift,
 				UI/MainWindow/DownwardPointer.swift,
 				UI/MainWindow/EqualizerDetailView.swift,

@@ -1,4 +1,5 @@
 import SwiftUI
+import Foundation
 
 struct SpectrumBackdrop: View {
     @ObservedObject var spectrum: SpectrumAnalyzer
@@ -7,6 +8,7 @@ struct SpectrumBackdrop: View {
 
     var body: some View {
         Canvas { context, _ in
+
             let points = spectrum.points
             // Silence would otherwise stroke a flat line along the floor of the
             // plot, which reads as a stray rule under the frequency labels.
@@ -32,16 +34,35 @@ struct SpectrumBackdrop: View {
             // second subject.
             //context.fill(fill, with: .color(.primary.opacity(0.05)))
             //context.stroke(line, with: .color(.primary.opacity(0.13)), lineWidth: 1)
+
+            //dpf mods
             //255, 51, 184
             //53, 255, 46
             //46, 234, 255
             //0, 255, 8
             //225, 255, 0 - yellow
             //15, 239, 255 - cyan
-            let myColor1 = Color(red: 15/255, green: 239/255, blue: 255/255)
-            let myColor2 = Color(red: 15/255, green: 239/255, blue: 255/255)
-            context.fill(fill, with: .color(myColor1.opacity(0.05)))
-            context.stroke(line, with: .color(myColor2.opacity(0.50)), lineWidth: 1)
+            //let myColor1 = Color(red: 15/255, green: 239/255, blue: 255/255)
+            //let myColor2 = Color(red: 15/255, green: 239/255, blue: 255/255)
+            
+            
+            // Define the boundaries
+            let minRangeValue: CGFloat = 0.0
+            let maxRangeValue: CGFloat = 255.0
+
+            // Generate and assign the random value
+            let rndRed: CGFloat = Double.random(in: minRangeValue...maxRangeValue)
+            let rndGrn: CGFloat = Double.random(in: minRangeValue...maxRangeValue)
+            let rndBlu: CGFloat = Double.random(in: minRangeValue...maxRangeValue)
+            
+            
+            
+            
+            let waveFormTrim = Color(red: rndRed/255, green: rndGrn/255, blue: rndBlu/255)
+            let waveFormFill = Color(red: rndRed/255, green: rndGrn/255, blue: rndBlu/255)
+            
+            context.fill(fill, with: .color(waveFormTrim.opacity(0.05)))
+            context.stroke(line, with: .color(waveFormFill.opacity(0.50)), lineWidth: 1)
         }
         .allowsHitTesting(false)
     }
