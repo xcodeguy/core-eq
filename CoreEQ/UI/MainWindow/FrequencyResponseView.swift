@@ -442,6 +442,7 @@ struct FrequencyResponseView: View {
         }
         guard let source else { return }
         let tint = source.isBand ? Color.coreEQSignal : BandColor.at(source.colorIndex).color
+        //let tint = source.isBand ? Color.green : Color.blue
         let biquad = Biquad(filter: source, sampleRate: sampleRate)
         let axis = axis(size)
 
@@ -491,6 +492,7 @@ struct FrequencyResponseView: View {
             fill,
             with: .linearGradient(
                 Gradient(colors: [.coreEQSignal.opacity(0.10), .coreEQSignal.opacity(0.0)]),
+                //Gradient(colors: [Color.blue, Color.white]),
                 startPoint: CGPoint(x: 0, y: 0),
                 endPoint: CGPoint(x: 0, y: floor)
             )
@@ -498,6 +500,7 @@ struct FrequencyResponseView: View {
 
         context.stroke(
             curve, with: .color(.coreEQSignal), style: StrokeStyle(lineWidth: 1.5, lineJoin: .round)
+            //curve, with: .color(Color.blue), style: StrokeStyle(lineWidth: 1.5, lineJoin: .round)
         )
     }
 

@@ -35,8 +35,8 @@ enum Theme {
         nsColor: NSColor(name: "CoreEQSignal") { appearance in
             let isDark = appearance.bestMatch(from: [.aqua, .darkAqua]) == .darkAqua
             return isDark
-                ? NSColor(srgbRed: 0.871, green: 0.847, blue: 0.816, alpha: 1)  // #DED8D0
-                : NSColor(srgbRed: 0.239, green: 0.208, blue: 0.180, alpha: 1)  // #3D352E
+            ? NSColor(srgbRed: 0.871, green: 0.847, blue: 0.816, alpha: 1)  // #DED8D0
+            : NSColor(srgbRed: 0.239, green: 0.208, blue: 0.180, alpha: 1)  // #3D352E
         })
 
     /// Border shared by every block and by the plot, so the plot reads as one of

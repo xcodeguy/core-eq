@@ -30,8 +30,14 @@ struct SpectrumBackdrop: View {
 
             // Deliberately faint: the analyzer is context for the curve, not a
             // second subject.
-            context.fill(fill, with: .color(.primary.opacity(0.05)))
-            context.stroke(line, with: .color(.primary.opacity(0.13)), lineWidth: 1)
+            //context.fill(fill, with: .color(.primary.opacity(0.05)))
+            //context.stroke(line, with: .color(.primary.opacity(0.13)), lineWidth: 1)
+            //255, 51, 184
+            //53, 255, 46
+            //46, 234, 255
+            let myColor = Color(red: 46/255, green: 234/255, blue: 255/255)
+            context.fill(fill, with: .color(myColor.opacity(0.05)))
+            context.stroke(line, with: .color(myColor.opacity(0.13)), lineWidth: 1)
         }
         .allowsHitTesting(false)
     }

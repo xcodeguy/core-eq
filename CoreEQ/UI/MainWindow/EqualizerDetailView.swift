@@ -347,7 +347,8 @@ struct EqualizerDetailView: View {
         .frame(minHeight: 120, maxHeight: .infinity)
         .background(
             RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .fill(Color.primary.opacity(0.035))
+                .fill(Color.primary.opacity(0.035))//0.035
+                //.fill(Color.red)
                 .strokeBorder(Theme.blockBorder, lineWidth: 1)
         )
         .opacity(audioEngine.isProcessing ? 1.0 : 0.5)
@@ -750,7 +751,7 @@ struct EqualizerDetailView: View {
         )
         .overlay(
             RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(Color.primary.opacity(0.12))
+                .strokeBorder(Color.primary.opacity(0.80))
         )
         .shadow(color: .black.opacity(0.18), radius: 12, y: 4)
         .accessibilityElement(children: .combine)
